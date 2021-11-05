@@ -13,17 +13,21 @@ let prezzoBiglietto = parseFloat(0.21 * km);
 let sconto20 = prezzoBiglietto * 20 / 100;
 let sconto40 = prezzoBiglietto * 40 / 100;
 
-if(eta < 18){
+if(eta < 18 && !(isNaN(eta)) && !(isNaN(km))){
     prezzoBiglietto = prezzoBiglietto - sconto20;
     console.log(prezzoBiglietto);
     console.log(sconto20); 
-}else if(eta > 65){
+    document.writeln("il costo del tuo biglietto sarà: " + prezzoBiglietto.toFixed(2) + "€.");
+}else if(eta > 65 && !(isNaN(eta)) && !(isNaN(km))){
     prezzoBiglietto = prezzoBiglietto - sconto40;
     console.log(prezzoBiglietto);
     console.log(sconto40); 
-}else{
+    document.writeln("il costo del tuo biglietto sarà: " + prezzoBiglietto.toFixed(2) + "€.");
+}else if(eta >= 18 && eta <= 65 && !(isNaN(eta)) && !(isNaN(km))){
     console.log(prezzoBiglietto);
+    document.writeln("il costo del tuo biglietto sarà: " + prezzoBiglietto.toFixed(2) + "€.");
+}else{
+    document.writeln("Errore non hai inserito un numero! riprova!");
 }
 
-document.writeln("il costo del tuo biglietto sarà: " + prezzoBiglietto.toFixed(2) + "€.");
 
