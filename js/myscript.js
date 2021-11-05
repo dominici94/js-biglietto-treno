@@ -10,8 +10,8 @@ const eta = prompt('Qual è la tua età?');
 
 let prezzoBiglietto = parseFloat(0.21 * km);
 
-let sconto20 = Math.round(prezzoBiglietto * 20 / 100);
-let sconto40 = Math.round(prezzoBiglietto * 40 / 100);
+let sconto20 = prezzoBiglietto * 20 / 100;
+let sconto40 = prezzoBiglietto * 40 / 100;
 
 if(eta < 18){
     prezzoBiglietto = prezzoBiglietto - sconto20;
@@ -25,5 +25,5 @@ if(eta < 18){
     console.log(prezzoBiglietto);
 }
 
-document.writeln("il costo del tuo biglietto sarà: " + prezzoBiglietto + "€.");
+document.writeln("il costo del tuo biglietto sarà: " + prezzoBiglietto.toFixed(2) + "€.");
 
